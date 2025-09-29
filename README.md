@@ -39,7 +39,7 @@ End‑to‑end Python framework for **multi‑asset portfolio construction**, **
 multi-asset-portfolio-analytics/
 │
 ├── example.ipynb                   # Interactive demo to review code and features 
-├── utils.py                        # All used libraries and usefull methods
+├── utils.py                        # All used libraries and useful methods
 ├── portfolio.py                    # Portfolio construction & optimisation
 ├── risk_analysis.py                # VaR/CVaR calculations
 ├── simulation.py                   # Monte Carlo simulation, PnL & drawdown
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 ### Efficient Frontier
 ![Efficient Frontier](images/efficient_frontier.png)
 
-### 
+### Historical VaR and CVaR
 ![Historical VaR and CVaR](images/hist_var_cvar.png)
 
 ### PnL Distribution
@@ -90,4 +90,5 @@ pip install -r requirements.txt
 
 ## License
 Personal project — free to use and modify for educational or demonstration purposes.
+
 ```
