@@ -19,7 +19,7 @@ LOOKBACK_DAYS = 365 * 2
 INTERVAL = '1d' 
 
 
-print("\n=== Portfolio Optimisation ===")
+print('\n=== Portfolio Optimisation ===')
 portfolio = Portfolio(
     tickers_list = TICKERS,
     end_date = END_DATE,
@@ -32,17 +32,14 @@ portfolio = Portfolio(
 portfolio.efficient_frontier_with_alpha(alpha=0.65)
 portfolio_df = portfolio.optimized_pf()
 
-print("\n=== Risk Analysis ===")
+print('\n=== Risk Analysis ===')
 risk = RiskAnalysis(portfolio_df)
-
 risk.var_hist(confidence_level=confidence_level)
-
 risk.var_param(confidence_level=confidence_level, days=HORIZON_DAYS)
-
 risk.var_montecarlo(confidence_level=confidence_level, horizon=HORIZON_DAYS, n_sims=N_SIMS)
 
 
-print("\n=== Forward Simulation ===")
+print('\n=== Forward Simulation ===')
 simulator = PriceSimulator(portfolio_df['Total_Portfolio_Value'])
 
 simulator.simulate_pnl_distribution(
