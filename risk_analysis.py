@@ -1,7 +1,6 @@
 from utils import *
 
 class RiskAnalysis ():
-
     '''
     Compute VaR and CVaR and display a visualization
     Convention: losses are shown as negative values on plots (so left side = worse losses)
@@ -44,7 +43,6 @@ class RiskAnalysis ():
         var_mag = abs(var_val)
         cvar_mag = abs(cvar_val)
         return var_mag, cvar_mag, var_val, cvar_val
-
     
     def var_param(self, confidence_level, days: int):
         alpha = _ensure_alpha(confidence_level)
@@ -52,9 +50,9 @@ class RiskAnalysis ():
     
         stat, p_value = shapiro(ret)
         if p_value > 0.05:
-            print(f"[Shapiro-Wilk] p-value = {p_value:.4f} → Normality check of returns: positive")
+            print(f'[Shapiro-Wilk] p-value = {p_value:.4f} → Normality check of returns: positive')
         else:
-            print(f"[Shapiro-Wilk] p-value = {p_value:.4f} → Normality check of returns: negative")
+            print(f'[Shapiro-Wilk] p-value = {p_value:.4f} → Normality check of returns: negative')
         
         mu = ret.mean()
         sigma = ret.std(ddof=1)
@@ -76,7 +74,6 @@ class RiskAnalysis ():
         plt.show()
 
         return float(var_path[-1]), float(cvar_path[-1]), float(var_signed[-1]), float(cvar_signed[-1])
-
 
     def var_montecarlo(self, confidence_level, n_sims: int, horizon: int, seed: int = 22):
         confidence_level = _ensure_alpha(confidence_level)
